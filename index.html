@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caretram ABA | Atlanta's Premier ABA Therapy Provider</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,800;1,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sun: #FFB830;
+    --sky: #4ABDE8;
+    --mint: #3ECFA0;
+    --coral: #FF6B6B;
+    --lavender: #9B7FE8;
+    --cream: #FFF9F0;
+    --dark: #1A1A2E;
+    --mid: #4A4A6A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(255,249,240,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,184,48,0.2);
+  }
+
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--dark);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .logo-dot {
+    width: 12px; height: 12px;
+    background: var(--sun);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--mid);
+    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--coral); }
+
+  .nav-cta {
+    background: var(--coral);
+    color: white !important;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-weight: 600 !important;
+    transition: background 0.2s, transform 0.2s !important;
+  }
+  .nav-cta:hover { background: #ff5252 !important; transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(62,207,160,0.12);
+    color: var(--mint);
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 8px 16px; border-radius: 100px;
+    border: 1px solid rgba(62,207,160,0.3);
+    margin-bottom: 28px;
+    width: fit-content;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.08;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--coral);
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem; line-height: 1.7;
+    color: var(--mid); max-width: 480px;
+    margin-bottom: 44px;
+    animation: fadeUp 0.8s 0.25s ease both;
+  }
+
+  .hero-btns {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.35s ease both;
+  }
+
+  .btn-primary {
+    background: var(--sun);
+    color: var(--dark);
+    padding: 16px 36px; border-radius: 100px;
+    font-weight: 700; font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(255,184,48,0.4);
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(255,184,48,0.5); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--dark);
+    padding: 16px 36px; border-radius: 100px;
+    font-weight: 600; font-size: 1rem;
+    text-decoration: none;
+    border: 2px solid var(--dark);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: var(--dark); color: white; }
+
+  .hero-stats {
+    display: flex; gap: 40px; margin-top: 60px;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.4rem; font-weight: 800;
+    color: var(--dark);
+    display: block;
+  }
+  .stat-label { font-size: 0.82rem; color: var(--mid); font-weight: 500; }
+
+  /* HERO RIGHT - photo collage */
+  .hero-right {
+    position: relative;
+    background: linear-gradient(135deg, #FFE4B5 0%, #B5EAD7 100%);
+    overflow: hidden;
+  }
+
+  .photo-grid {
+    position: absolute; inset: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .photo-cell {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .photo-cell img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .photo-cell:hover img { transform: scale(1.05); }
+
+  .photo-cell:nth-child(1) { grid-row: 1 / 3; border-radius: 24px; }
+  .photo-cell:nth-child(2) { border-radius: 24px 24px 8px 8px; }
+  .photo-cell:nth-child(3) { border-radius: 8px; }
+  .photo-cell:nth-child(4) { border-radius: 8px 8px 24px 24px; }
+
+  .badge-float {
+    position: absolute;
+    background: white;
+    border-radius: 16px;
+    padding: 12px 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.85rem; font-weight: 600;
+    z-index: 10;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .badge-float:nth-of-type(1) { bottom: 30px; left: -20px; }
+  .badge-float:nth-of-type(2) { top: 50px; right: -20px; animation-delay: 1.5s; }
+
+  .badge-icon { font-size: 1.4rem; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION BASE */
+  section { padding: 100px 80px; }
+
+  .section-tag {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--coral);
+    margin-bottom: 16px; display: block;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800; line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .section-title span { color: var(--sky); }
+
+  .section-sub {
+    font-size: 1.05rem; line-height: 1.7;
+    color: var(--mid); max-width: 580px;
+  }
+
+  /* SERVICES */
+  .services { background: white; }
+
+  .services-header { text-align: center; margin-bottom: 64px; }
+  .services-header .section-sub { margin: 0 auto; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .service-card {
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    group: true;
+  }
+
+  .service-img {
+    width: 100%; height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover .service-img { transform: scale(1.06); }
+
+  .service-body {
+    padding: 24px 28px 28px;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-top: none;
+    border-radius: 0 0 24px 24px;
+  }
+
+  .service-icon {
+    font-size: 1.8rem; margin-bottom: 10px; display: block;
+  }
+
+  .service-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem; font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .service-desc {
+    font-size: 0.9rem; color: var(--mid); line-height: 1.65;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px;
+    border-radius: 0 0 24px 24px;
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+  .service-card:nth-child(1)::after { background: var(--sky); }
+  .service-card:nth-child(2)::after { background: var(--mint); }
+  .service-card:nth-child(3)::after { background: var(--coral); }
+  .service-card:hover::after { opacity: 1; }
+
+  /* INSURANCE */
+  .insurance {
+    background: linear-gradient(135deg, #1A1A2E 0%, #2D2D5E 100%);
+    color: white;
+  }
+
+  .insurance .section-title { color: white; }
+  .insurance .section-sub { color: rgba(255,255,255,0.65); }
+  .insurance .section-tag { color: var(--sun); }
+
+  .insurance-content {
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center;
+  }
+
+  .insurance-logos {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    margin-top: 40px;
+  }
+
+  .ins-badge {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align: center;
+    transition: all 0.25s;
+    cursor: default;
+  }
+
+  .ins-badge:hover {
+    background: rgba(255,184,48,0.12);
+    border-color: rgba(255,184,48,0.4);
+    transform: translateY(-3px);
+  }
+
+  .ins-name {
+    font-size: 0.82rem; font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.3;
+  }
+
+  .ins-type {
+    font-size: 0.7rem; color: var(--sun);
+    margin-top: 4px; display: block;
+  }
+
+  .insurance-photo-stack {
+    position: relative; height: 480px;
+  }
+
+  .ins-photo {
+    position: absolute;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .ins-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .ins-photo:nth-child(1) {
+    width: 300px; height: 360px;
+    top: 0; left: 0;
+    transform: rotate(-3deg);
+  }
+  .ins-photo:nth-child(2) {
+    width: 260px; height: 300px;
+    bottom: 0; right: 0;
+    transform: rotate(2deg);
+  }
+
+  /* SERVICE AREA */
+  .service-area { background: var(--cream); }
+
+  .area-header {
+    display: flex; justify-content: space-between;
+    align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 20px;
+  }
+
+  .cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .city-chip {
+    display: flex; align-items: center; gap: 10px;
+    background: white;
+    border-radius: 12px;
+    padding: 14px 18px;
+    border: 1px solid rgba(0,0,0,0.06);
+    font-size: 0.88rem; font-weight: 500;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .city-chip:hover {
+    border-color: var(--sky);
+    background: rgba(74,189,232,0.06);
+    transform: translateY(-2px);
+  }
+
+  .city-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--mint); flex-shrink: 0;
+  }
+
+  .city-zip {
+    margin-left: auto; font-size: 0.75rem;
+    color: var(--mid); font-weight: 400;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials { background: white; }
+
+  .testi-header { text-align: center; margin-bottom: 64px; }
+  .testi-header .section-sub { margin: 0 auto; }
+
+  .testi-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  }
+
+  .testi-card {
+    background: var(--cream);
+    border-radius: 24px;
+    padding: 36px;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .testi-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.08);
+  }
+
+  .testi-quote {
+    font-family: 'Fraunces', serif;
+    font-size: 3rem; line-height: 1;
+    color: var(--sun);
+    margin-bottom: 16px;
+  }
+
+  .testi-text {
+    font-size: 0.95rem; line-height: 1.75;
+    color: var(--mid); margin-bottom: 28px;
+  }
+
+  .testi-author { display: flex; align-items: center; gap: 14px; }
+
+  .testi-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    object-fit: cover; flex-shrink: 0;
+  }
+
+  .testi-info strong { display: block; font-size: 0.9rem; font-weight: 700; }
+  .testi-info span { font-size: 0.8rem; color: var(--mid); }
+
+  .stars { color: var(--sun); font-size: 0.9rem; margin-bottom: 2px; }
+
+  /* TEAM */
+  .team-section {
+    background: linear-gradient(180deg, #E8F8F2 0%, var(--cream) 100%);
+  }
+
+  .team-header { text-align: center; margin-bottom: 64px; }
+  .team-header .section-sub { margin: 0 auto; }
+
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+  .team-card { text-align: center; }
+
+  .team-img-wrap {
+    position: relative; margin-bottom: 20px;
+    width: 180px; height: 180px; border-radius: 50%;
+    margin-left: auto; margin-right: auto;
+    overflow: hidden;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+    border: 4px solid white;
+    transition: transform 0.3s;
+  }
+
+  .team-card:hover .team-img-wrap { transform: scale(1.05); }
+
+  .team-img { width: 100%; height: 100%; object-fit: cover; }
+
+  .team-name { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; }
+  .team-role { font-size: 0.82rem; color: var(--coral); font-weight: 600; margin-top: 4px; }
+  .team-cred { font-size: 0.78rem; color: var(--mid); margin-top: 6px; }
+
+  /* CTA BANNER */
+  .cta-section {
+    background: var(--coral);
+    padding: 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=1600&q=60') center/cover;
+    opacity: 0.15;
+  }
+
+  .cta-content { position: relative; z-index: 1; }
+
+  .cta-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 800; color: white;
+    margin-bottom: 20px; line-height: 1.15;
+  }
+
+  .cta-sub { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 44px; }
+
+  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-white {
+    background: white; color: var(--coral);
+    padding: 16px 40px; border-radius: 100px;
+    font-weight: 700; font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+    transition: all 0.2s;
+  }
+  .btn-white:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,0,0,0.2); }
+
+  .btn-outline-white {
+    background: transparent; color: white;
+    padding: 16px 40px; border-radius: 100px;
+    font-weight: 600; font-size: 1rem;
+    text-decoration: none; border: 2px solid rgba(255,255,255,0.6);
+    transition: all 0.2s;
+  }
+  .btn-outline-white:hover { background: rgba(255,255,255,0.15); }
+
+  /* CONTACT */
+  .contact-section {
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding: 0; min-height: 560px;
+  }
+
+  .contact-photo { overflow: hidden; }
+  .contact-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .contact-form-area {
+    padding: 80px 72px;
+    background: var(--dark); color: white;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .contact-form-area .section-tag { color: var(--sun); }
+  .contact-form-area .section-title { color: white; font-size: 2.2rem; }
+
+  .form-row { display: flex; gap: 16px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; flex: 1; }
+
+  .form-group label { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: white;
+    padding: 14px 18px; border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--sun); }
+
+  .form-group select option { background: var(--dark); }
+
+  .submit-btn {
+    margin-top: 28px;
+    background: var(--sun); color: var(--dark);
+    padding: 16px 40px; border-radius: 100px;
+    font-weight: 700; font-size: 1rem;
+    border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    width: 100%;
+    transition: all 0.2s;
+  }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,184,48,0.4); }
+
+  /* FOOTER */
+  footer {
+    background: #111122;
+    color: rgba(255,255,255,0.6);
+    padding: 60px 80px 40px;
+  }
+
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand .logo { color: white; font-size: 1.4rem; }
+  .footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-top: 16px; max-width: 280px; }
+
+  .footer-col h4 {
+    font-size: 0.78rem; font-weight: 700;
+    color: white; letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a { color: rgba(255,255,255,0.55); font-size: 0.88rem; text-decoration: none; transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--sun); }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  }
+
+  .footer-bottom p { font-size: 0.82rem; }
+  .footer-accred { display: flex; gap: 12px; }
+  .accred-badge {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; padding: 6px 12px;
+    font-size: 0.72rem; color: rgba(255,255,255,0.5);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">
+    <span class="logo-dot"></span> Caretram ABA
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#insurance">Insurance</a></li>
+    <li><a href="#areas">Service Areas</a></li>
+    <li><a href="#team">Our Team</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">
+      <span>🌟</span> BCBA-Supervised · Georgia Licensed
+    </div>
+    <h1 class="hero-title">
+      Every child<br>
+      <em>thrives</em> with the<br>
+      right support.
+    </h1>
+    <p class="hero-subtitle">
+      Caretram ABA delivers compassionate, evidence-based Applied Behavior Analysis therapy for children in Atlanta and surrounding communities — helping families unlock their child's full potential.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Schedule a Free Consult <span>→</span></a>
+      <a href="#services" class="btn-secondary">Learn More</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Families Served</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">15+</span>
+        <span class="stat-label">Years of Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">30+</span>
+        <span class="stat-label">Metro Locations</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="photo-grid">
+      <div class="photo-cell">
+        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&q=80" alt="Child learning">
+      </div>
+      <div class="photo-cell">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80" alt="Happy children">
+      </div>
+      <div class="photo-cell">
+        <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80" alt="Therapy session">
+      </div>
+      <div class="photo-cell">
+        <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80" alt="Children playing">
+      </div>
+    </div>
+    <div class="badge-float">
+      <span class="badge-icon">🏆</span>
+      <div>
+        <strong style="font-size:0.88rem">Top ABA Provider</strong>
+        <p style="font-size:0.72rem;color:#666;font-weight:400">Atlanta, 2024</p>
+      </div>
+    </div>
+    <div class="badge-float">
+      <span class="badge-icon">💛</span>
+      <div>
+        <strong style="font-size:0.88rem">Accepted Insurances</strong>
+        <p style="font-size:0.72rem;color:#666;font-weight:400">15+ major plans</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <span class="section-tag">What We Do</span>
+    <h2 class="section-title">Comprehensive ABA <span>Therapy Programs</span></h2>
+    <p class="section-sub">Each program is personalized, BCBA-supervised, and built around your child's unique strengths, needs, and family goals.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1602020015533-7f26e54f3def?w=700&q=80" alt="In-Home ABA" class="service-img">
+      <div class="service-body">
+        <span class="service-icon">🏠</span>
+        <div class="service-name">In-Home ABA Therapy</div>
+        <p class="service-desc">Our therapists come to your home, providing naturalistic learning in the environment where your child feels most comfortable and secure.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1567448400815-6743e049e3fc?w=700&q=80" alt="Center-Based ABA" class="service-img">
+      <div class="service-body">
+        <span class="service-icon">🏫</span>
+        <div class="service-name">Center-Based Therapy</div>
+        <p class="service-desc">Structured sessions at our bright, welcoming Atlanta-area centers equipped with the latest learning tools and social skill building opportunities.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1536152470836-b943b246224c?w=700&q=80" alt="Social Skills" class="service-img">
+      <div class="service-body">
+        <span class="service-icon">🤝</span>
+        <div class="service-name">Social Skills Groups</div>
+        <p class="service-desc">Small-group sessions that build peer interaction, communication, and friendship skills in a fun, supervised, and encouraging environment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSURANCE -->
+<section class="insurance" id="insurance">
+  <div class="insurance-content">
+    <div>
+      <span class="section-tag">Coverage</span>
+      <h2 class="section-title">We Accept Your <span style="color:var(--sky)">Insurance</span></h2>
+      <p class="section-sub">We work with most major insurance providers to make ABA therapy as affordable and accessible as possible for Georgia families.</p>
+
+      <div class="insurance-logos">
+        <div class="ins-badge"><div class="ins-name">Blue Cross Blue Shield</div><span class="ins-type">BCBS of Georgia</span></div>
+        <div class="ins-badge"><div class="ins-name">Aetna</div><span class="ins-type">Commercial & Medicaid</span></div>
+        <div class="ins-badge"><div class="ins-name">United Healthcare</div><span class="ins-type">UHC / Optum</span></div>
+        <div class="ins-badge"><div class="ins-name">Cigna</div><span class="ins-type">Behavioral Health</span></div>
+        <div class="ins-badge"><div class="ins-name">Humana</div><span class="ins-type">Commercial Plans</span></div>
+        <div class="ins-badge"><div class="ins-name">Peach State Health</div><span class="ins-type">Georgia Medicaid</span></div>
+        <div class="ins-badge"><div class="ins-name">WellCare</div><span class="ins-type">Medicaid / KidsCare</span></div>
+        <div class="ins-badge"><div class="ins-name">Amerigroup</div><span class="ins-type">GA Medicaid</span></div>
+        <div class="ins-badge"><div class="ins-name">Tricare</div><span class="ins-type">Military Families</span></div>
+        <div class="ins-badge"><div class="ins-name">CareSource</div><span class="ins-type">Marketplace Plans</span></div>
+        <div class="ins-badge"><div class="ins-name">Anthem</div><span class="ins-type">Commercial Plans</span></div>
+        <div class="ins-badge"><div class="ins-name">Magellan Health</div><span class="ins-type">Behavioral EAP</span></div>
+      </div>
+    </div>
+
+    <div class="insurance-photo-stack">
+      <div class="ins-photo">
+        <img src="https://images.unsplash.com/photo-1620147461831-a97b99ade1d3?w=600&q=80" alt="Family consultation">
+      </div>
+      <div class="ins-photo">
+        <img src="https://images.unsplash.com/photo-1561948957-845f98f7e55d?w=600&q=80" alt="Child therapy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="service-area" id="areas">
+  <div class="area-header">
+    <div>
+      <span class="section-tag">Where We Serve</span>
+      <h2 class="section-title">Serving Atlanta &<br><span>Surrounding Communities</span></h2>
+    </div>
+    <p class="section-sub" style="max-width:380px">We provide in-home and center-based ABA therapy across the greater Atlanta metro area and communities within 75 miles.</p>
+  </div>
+
+  <div class="cities-grid">
+    <div class="city-chip"><span class="city-dot"></span> Atlanta<span class="city-zip">30301–30397</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--coral)"></span> Alpharetta<span class="city-zip">30004, 30005</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sky)"></span> Marietta<span class="city-zip">30060–30069</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--lavender)"></span> Sandy Springs<span class="city-zip">30328, 30342</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sun)"></span> Roswell<span class="city-zip">30075, 30076</span></div>
+    <div class="city-chip"><span class="city-dot"></span> Smyrna<span class="city-zip">30080, 30082</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--coral)"></span> Dunwoody<span class="city-zip">30338, 30346</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sky)"></span> Peachtree City<span class="city-zip">30269</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--lavender)"></span> Decatur<span class="city-zip">30030, 30032</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sun)"></span> Lawrenceville<span class="city-zip">30043, 30044</span></div>
+    <div class="city-chip"><span class="city-dot"></span> Gwinnett County<span class="city-zip">30045–30047</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--coral)"></span> Kennesaw<span class="city-zip">30144, 30152</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sky)"></span> Woodstock<span class="city-zip">30188, 30189</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--lavender)"></span> Cumming<span class="city-zip">30040, 30041</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sun)"></span> Gainesville<span class="city-zip">30501, 30507</span></div>
+    <div class="city-chip"><span class="city-dot"></span> Buford<span class="city-zip">30518, 30519</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--coral)"></span> Duluth<span class="city-zip">30096, 30097</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sky)"></span> Norcross<span class="city-zip">30071, 30092</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--lavender)"></span> Tucker<span class="city-zip">30084</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sun)"></span> Stone Mountain<span class="city-zip">30083, 30087</span></div>
+    <div class="city-chip"><span class="city-dot"></span> Lithonia<span class="city-zip">30038, 30058</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--coral)"></span> McDonough<span class="city-zip">30252, 30253</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sky)"></span> Fayetteville<span class="city-zip">30214, 30215</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--lavender)"></span> Newnan<span class="city-zip">30263, 30265</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sun)"></span> Carrollton<span class="city-zip">30116, 30117</span></div>
+    <div class="city-chip"><span class="city-dot"></span> Rome<span class="city-zip">30161, 30165</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--coral)"></span> Canton<span class="city-zip">30114, 30115</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sky)"></span> Athens<span class="city-zip">30601–30609</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--lavender)"></span> Conyers<span class="city-zip">30012, 30013</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sun)"></span> Griffin<span class="city-zip">30223, 30224</span></div>
+    <div class="city-chip"><span class="city-dot"></span> LaGrange<span class="city-zip">30240, 30241</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--coral)"></span> Covington<span class="city-zip">30014, 30016</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sky)"></span> Villa Rica<span class="city-zip">30180</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--lavender)"></span> Douglasville<span class="city-zip">30134, 30135</span></div>
+    <div class="city-chip"><span class="city-dot" style="background:var(--sun)"></span> Stockbridge<span class="city-zip">30281</span></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testi-header">
+    <span class="section-tag">Families Love Us</span>
+    <h2 class="section-title">Real Stories, <span>Real Progress</span></h2>
+    <p class="section-sub">Hear from the families whose lives have been transformed by Caretram ABA's dedicated therapy services.</p>
+  </div>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Within six months of starting with Caretram, our son went from nonverbal to speaking in full sentences. The team's dedication is unlike anything we've experienced. They truly care.</p>
+      <div class="testi-author">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Sarah M." class="testi-avatar">
+        <div class="testi-info">
+          <strong>Sarah M.</strong>
+          <span>Parent · Alpharetta, GA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card" style="background: rgba(74,189,232,0.08);">
+      <div class="testi-quote" style="color:var(--sky)">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Caretram worked seamlessly with our insurance and made the whole process easy. More importantly, our daughter is thriving socially in ways we couldn't have imagined.</p>
+      <div class="testi-author">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Marcus J." class="testi-avatar">
+        <div class="testi-info">
+          <strong>Marcus J.</strong>
+          <span>Parent · Marietta, GA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card" style="background: rgba(155,127,232,0.08);">
+      <div class="testi-quote" style="color:var(--lavender)">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">The in-home therapy option was a game changer for us. Our therapist became part of our family. The progress reports are detailed and the communication is excellent.</p>
+      <div class="testi-author">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Jennifer R." class="testi-avatar">
+        <div class="testi-info">
+          <strong>Jennifer R.</strong>
+          <span>Parent · Decatur, GA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="team-header">
+    <span class="section-tag">Our Experts</span>
+    <h2 class="section-title">Meet the <span>Caretram Team</span></h2>
+    <p class="section-sub">Our certified BCBAs and Registered Behavior Technicians are passionate professionals committed to every child's success.</p>
+  </div>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-img-wrap" style="border-color: rgba(255,184,48,0.3);">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Dr. Priya Nair" class="team-img">
+      </div>
+      <div class="team-name">Dr. Priya Nair</div>
+      <div class="team-role">Clinical Director</div>
+      <div class="team-cred">BCBA-D · 18 Years Experience</div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-img-wrap" style="border-color: rgba(74,189,232,0.3);">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="James Okafor" class="team-img">
+      </div>
+      <div class="team-name">James Okafor</div>
+      <div class="team-role">Lead BCBA</div>
+      <div class="team-cred">BCBA · Early Intervention Specialist</div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-img-wrap" style="border-color: rgba(62,207,160,0.3);">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Alyssa Chen" class="team-img">
+      </div>
+      <div class="team-name">Alyssa Chen</div>
+      <div class="team-role">Behavior Analyst</div>
+      <div class="team-cred">BCBA · Social Skills Expert</div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-img-wrap" style="border-color: rgba(255,107,107,0.3);">
+        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80" alt="Marcus Webb" class="team-img">
+      </div>
+      <div class="team-name">Marcus Webb</div>
+      <div class="team-role">RBT Program Lead</div>
+      <div class="team-cred">RBT · School Transition Specialist</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-content">
+    <h2 class="cta-title">Ready to Start Your<br>Child's Journey?</h2>
+    <p class="cta-sub">Schedule a free consultation today. We'll help you understand your options, verify your insurance, and create a personalized plan.</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-white">Book a Free Consult</a>
+      <a href="tel:+14045550100" class="btn-outline-white">📞 (404) 555-0100</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-photo">
+    <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=900&q=80" alt="Therapy session">
+  </div>
+  <div class="contact-form-area">
+    <span class="section-tag">Get Started</span>
+    <h2 class="section-title" style="margin-bottom:8px">Request a Free<br>Consultation</h2>
+    <p style="font-size:0.9rem; color:rgba(255,255,255,0.55); margin-bottom:4px; line-height:1.6">We'll respond within 1 business day and help verify your insurance coverage.</p>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Parent / Guardian Name</label>
+        <input type="text" placeholder="Your full name">
+      </div>
+      <div class="form-group">
+        <label>Child's Age</label>
+        <input type="text" placeholder="e.g. 4 years old">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" placeholder="(404) 000-0000">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@email.com">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Insurance Provider</label>
+      <select>
+        <option value="">Select your insurance...</option>
+        <option>Blue Cross Blue Shield of Georgia</option>
+        <option>Aetna</option>
+        <option>United Healthcare / Optum</option>
+        <option>Cigna</option>
+        <option>Humana</option>
+        <option>Peach State Health (Medicaid)</option>
+        <option>WellCare</option>
+        <option>Amerigroup</option>
+        <option>Tricare</option>
+        <option>CareSource</option>
+        <option>Anthem</option>
+        <option>Other / Self-Pay</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>City / Area</label>
+      <input type="text" placeholder="e.g. Marietta, Alpharetta, Atlanta...">
+    </div>
+
+    <button class="submit-btn">Submit — It's Free & No Obligation ✨</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="logo" href="#"><span class="logo-dot"></span> Caretram ABA</a>
+      <p>Providing compassionate, evidence-based ABA therapy to families across Atlanta and the greater Georgia metro area since 2009.</p>
+      <div style="display:flex; gap:12px; margin-top:20px">
+        <a href="#" style="color:rgba(255,255,255,0.4); font-size:1.2rem; text-decoration:none; transition:color 0.2s" onmouseover="this.style.color='#FFB830'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">🐦</a>
+        <a href="#" style="color:rgba(255,255,255,0.4); font-size:1.2rem; text-decoration:none; transition:color 0.2s" onmouseover="this.style.color='#FFB830'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">📘</a>
+        <a href="#" style="color:rgba(255,255,255,0.4); font-size:1.2rem; text-decoration:none; transition:color 0.2s" onmouseover="this.style.color='#FFB830'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">📸</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">In-Home ABA</a></li>
+        <li><a href="#">Center-Based ABA</a></li>
+        <li><a href="#">Social Skills Groups</a></li>
+        <li><a href="#">Parent Training</a></li>
+        <li><a href="#">School Consultation</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Caretram</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+14045550100">(404) 555-0100</a></li>
+        <li><a href="mailto:hello@caretramaba.com">hello@caretramaba.com</a></li>
+        <li><a href="#">1234 Peachtree St NE</a></li>
+        <li><a href="#">Atlanta, GA 30309</a></li>
+        <li><a href="#">Mon–Fri 8am–6pm</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2024 Caretram ABA Therapy. All rights reserved. | <a href="#" style="color:inherit">Privacy Policy</a> · <a href="#" style="color:inherit">Terms of Service</a></p>
+    <div class="footer-accred">
+      <span class="accred-badge">BACB Certified</span>
+      <span class="accred-badge">GA Medicaid Provider</span>
+      <span class="accred-badge">HIPAA Compliant</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
